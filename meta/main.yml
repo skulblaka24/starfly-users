@@ -1,0 +1,11 @@
+galaxy_info:
+  author: Starfly Env Team
+  description: Ce role configure la création de l'utilisateur master.
+  
+  license: license (GPLv2, CC-BY, etc)
+
+  min_ansible_version: 2.4
+
+  galaxy_tags: []
+
+dependencies: []

@@ -1,0 +1,10 @@
+---
+# defaults file for users
+
+# root_password: 0689D%92
+# users_name: 'master'
+# users_comment: 'User Master'
+# users_group: sudo
+# users_createhome: yes
+# users_password: '06.kKYOwgNzTo' # Skulblaka24 # python2.7 -c 'import crypt; print crypt.crypt("PASSWORD", "whatever")'
+# users_to_delete: 'config' # pirate

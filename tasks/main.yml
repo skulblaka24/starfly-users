@@ -1,0 +1,27 @@
+---
+# tasks file for users
+
+- name: Configuration du nom d'utilisateur
+  user:
+    name: '{{ users_name }}'
+    shell: /bin/bash
+    comment: '{{ users_comment }}'
+    group: '{{ users_group }}'
+    createhome: '{{ users_createhome }}'
+    password: "{{ users_password }}"
+
+- name: Vérification de la présence du fichier .bash_prompt
+  stat: 
+    path: /home/'{{ users_to_delete }}'/.bash_prompt
+  register: users_result_bash_prompt
+
+- name: Déplace .bash_prompt dans le dossier du nouvel utilisateur
+  copy:
+    src: /home/{{ users_to_delete }}/.bash_prompt
+    dest: /home/{{ users_name }}/.bash_prompt
+    user: '{{ users_name }}'
+    group: '{{ users_group }}'
+    mode: 0644
+  when: users_result_bash_prompt.stat.exists
+
+...
